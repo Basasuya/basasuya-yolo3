@@ -1,0 +1,50 @@
+.
+├── LICENSE
+├── README.md
+├── Visual
+│   ├── Visual
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── view.py
+│   │   └── wsgi.py
+│   ├── db.sqlite3
+│   ├── manage.py
+│   └── templates
+│       ├── echarts.min.js
+│       ├── fail.html
+│       ├── temp.html
+│       └── vis1.html
+├── convert.py
+├── font
+│   ├── FiraMono-Medium.otf
+│   └── SIL\ Open\ Font\ License.txt
+├── model_data
+│   ├── coco_classes.txt
+│   ├── voc_classes.txt
+│   ├── yolo.h5
+│   └── yolo_anchors.txt
+├── outPut.txt
+├── src
+│   ├── photo.png
+│   ├── photo2.jpg
+│   ├── photo3.jpg
+│   └── photo4.jpg
+├── train.py
+├── tree.txt
+├── ui.py
+├── uiTest.py
+├── voc_annotation.py
+├── yolo.py
+├── yolo3
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   ├── model.cpython-36.pyc
+│   │   └── utils.cpython-36.pyc
+│   ├── model.py
+│   └── utils.py
+├── yolov3.cfg
+└── yolov3.weights
+
+10 directories, 47 files
