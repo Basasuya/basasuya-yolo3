@@ -1,7 +1,6 @@
-*.jpg
-*.png
 *.weights
 *.h5
+outPut.txt
 logs/
 *_test.py
 *.vscode
