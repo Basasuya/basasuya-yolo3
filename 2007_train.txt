@@ -1,2 +1,0 @@
-/Users/basasuya/keras-yolo3/VOCdevkit/VOC2007/JPEGImages/000001.jpg 48,240,195,371,11 8,12,352,498,14
-/Users/basasuya/keras-yolo3/VOCdevkit/VOC2007/JPEGImages/-1.jpg
