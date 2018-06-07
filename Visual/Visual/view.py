@@ -12,8 +12,50 @@ animalClasses = ['person', 'bicycle', 'car', 'motorbike', 'aeroplane', 'bus', 't
                  'pottedplant', 'bed', 'diningtable', 'toilet', 'tvmonitor', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
                  'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush', ]
 
-
+# def hello1(request):
+#     f = open("../outPut.txt", "r+")
+#     name = f.read()
+#     f.close()
+#     conn = mongo.MongoClient('127.0.0.1', 27017)
+#     db = conn.Basasuya
+#     my_set = db.get_collection(name)
+#     tt = my_set.find({}).limit(1)[0]
+#     if(tt.get('path', -1) == -1):
+#         return render(request, 'fail.html')
+#     List = []
+#     flag = True
+#     for i in my_set.find({}):
+#         if(flag):
+#             flag = False
+#             continue
+#         X = (i['left'] + i['right']) / 2
+#         Y = (i['top'] + i['bottom']) / 2
+#         List.append([X, Y])
+#     return render(request, 'vis2.html', {'data' : json.dumps(List)})
+    
 def hello(request):
+    f = open("../outPutType.txt", "r+")
+    name = f.read()
+    if(name == 'cluster'):
+        f = open("../outPut.txt", "r+")
+        name = f.read()
+        f.close()
+        conn = mongo.MongoClient('127.0.0.1', 27017)
+        db = conn.Basasuya
+        my_set = db.get_collection(name)
+        tt = my_set.find({}).limit(1)[0]
+        if(tt.get('path', -1) == -1):
+            return render(request, 'fail.html')
+        List = []
+        flag = True
+        for i in my_set.find({}):
+            if(flag):
+                flag = False
+                continue
+            X = (i['left'] + i['right']) / 2
+            Y = (i['top'] + i['bottom']) / 2
+            List.append([X, Y])
+        return render(request, 'vis2.html', {'data' : json.dumps(List)})
     f = open("../outPut.txt", "r+")
     name = f.read()
     f.close()

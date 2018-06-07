@@ -71,10 +71,14 @@ if __name__ == '__main__':
     tk.Label(root, fg='darkorange', text='analysis from\nmongodb collection:',
              bg='azure').place(x=835, y=25)
     tk.Label(root, fg='orangered', text='Detection Analysis',
-             bg='azure').place(x=780, y=110)
+             bg='azure').place(x=750, y=110)
     com2 = ttk.Combobox(root, width=10, values=allDB, state='readonly')
     com2.current(0)
     com2.place(x=850, y=65)
+
+    com2 = ttk.Combobox(root, width=6, values=('cluster', 'analysis'), state='readonly')
+    com2.current(0)
+    com2.place(x=880, y=105)
 
     w.create_rectangle(20, 155, 900, 570, outline='azure', fill='azure')
     for i in range(animalNumber):
