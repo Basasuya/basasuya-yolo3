@@ -78,18 +78,18 @@ def detect_video(path, database=''):
     vid = cv2.VideoCapture(path)
     if not vid.isOpened():
         raise IOError("Couldn't open webcam or video")
-    cv2.namedWindow("video", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("press q to quit", cv2.WINDOW_NORMAL)
     frames = int(vid.get(cv2.CAP_PROP_FRAME_COUNT))
     loop_flag = 0
     pos = 0
-    cv2.createTrackbar('time', 'video', 0, frames, nothing)
+    cv2.createTrackbar('time', 'press q to quit', 0, frames, nothing)
     print(frames)
     while True:
         if loop_flag == pos:
             loop_flag = loop_flag + 1
-            cv2.setTrackbarPos('time', 'video', loop_flag)
+            cv2.setTrackbarPos('time', 'press q to quit', loop_flag)
         else:
-            pos = cv2.getTrackbarPos('time', 'video')
+            pos = cv2.getTrackbarPos('time', 'press q to quit')
             loop_flag = pos
             vid.set(cv2.CAP_PROP_POS_FRAMES, pos)
         if loop_flag == frames:
@@ -103,7 +103,7 @@ def detect_video(path, database=''):
             image = yolo.detect_image(
                 image, animals, predictEdge, pos, database=my_set)
         result = np.asarray(image)
-        cv2.imshow("video", result)
+        cv2.imshow("press q to quit", result)
         tt = cv2.waitKey(1)
         if tt == 113:
             break
@@ -118,13 +118,13 @@ def detect_camera():
     vid = cv2.VideoCapture(0)
     if not vid.isOpened():
         raise IOError("Couldn't open webcam or video")
-    cv2.namedWindow("result", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("press q to quit", cv2.WINDOW_NORMAL)
     while True:
         return_value, frame = vid.read()
         image = PIL.Image.fromarray(frame)
         image = yolo.detect_image(image, animals, predictEdge)
         result = np.asarray(image)
-        cv2.imshow("result", result)
+        cv2.imshow("press q to quit", result)
         tt = cv2.waitKey(1)
         if tt == 113:
             break
@@ -141,18 +141,18 @@ def detect_database():
     vid = cv2.VideoCapture(path)
     if not vid.isOpened():
         raise IOError("Couldn't open webcam or video")
-    cv2.namedWindow("video", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("press q to quit", cv2.WINDOW_NORMAL)
     frames = int(vid.get(cv2.CAP_PROP_FRAME_COUNT))
     print(frames)
     loop_flag = 0
     pos = 0
-    cv2.createTrackbar('time', 'video', 0, frames, nothing)
+    cv2.createTrackbar('time', 'press q to quit', 0, frames, nothing)
     while True:
         if loop_flag == pos:
             loop_flag = loop_flag + 1
-            cv2.setTrackbarPos('time', 'video', loop_flag)
+            cv2.setTrackbarPos('time', 'press q to quit', loop_flag)
         else:
-            pos = cv2.getTrackbarPos('time', 'video')
+            pos = cv2.getTrackbarPos('time', 'press q to quit')
             loop_flag = pos
             vid.set(cv2.CAP_PROP_POS_FRAMES, pos)
         if loop_flag == frames:
@@ -162,7 +162,7 @@ def detect_database():
         image = yolo.detect_data(
             image, animals, predictEdge, pos, database=my_set)
         result = np.asarray(image)
-        cv2.imshow("video", result)
+        cv2.imshow("press q to quit", result)
         tt = cv2.waitKey(1)
         if tt == 113:
             break
