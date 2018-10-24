@@ -24,16 +24,7 @@ python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
 
 ## Training By Yourself
 
-1. Generate your own annotation file and class names file.  
-    One row for one image;  
-    Row format: image_file_path box1 box2 ... boxN;  
-    Box format: x_min,y_min,x_max,y_max,class_id (no space).  
-    For VOC dataset, try `python voc_annotation.py`
-2. download backend from below and place yolo_weights.h5 in model_data folder
-    https://drive.google.com/drive/u/2/folders/1Qj46bDCBWMbIXm7rPZCIjCVIczxaj2l_
-3. Modify train.py and start training.  
-    `python train.py`  
-    You will get the trained model model_data/my_yolo.h5.
+see https://github.com/qqwweee/keras-yolo3/blob/master/README.md of the training part
 
 ---
 
